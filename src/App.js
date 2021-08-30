@@ -1,11 +1,31 @@
-import "./App.css";
+import { useState } from "react";
+import { Container } from "./components/Container";
+import { Form } from "./components/Form";
+import { List } from "./components/List";
+import classes from "./App.module.css";
 
-function App() {
+export const App = () => {
+  const [list, setList] = useState([]);
+
+  const handleAddToList = (item) => {
+    console.log(item);
+    setList((prevList) => [...prevList, item]);
+  };
+
+  console.log(list);
+
   return (
-    <div className="App">
-      <header className="App-header">Zaczynamy</header>
+    <div className={classes["App"]}>
+      <header className={classes["App__header"]}>FavMusicList</header>
+      <main className={classes["App__main"]}>
+        <Container>
+          <Form onAddToList={handleAddToList}></Form>
+          <List list={list} />
+        </Container>
+      </main>
+      <footer className={classes["App__footer"]}>
+        &#169;Paweł Hińcza, 2021
+      </footer>
     </div>
   );
-}
-
-export default App;
+};
