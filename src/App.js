@@ -12,6 +12,14 @@ export const App = () => {
     setList((prevList) => [...prevList, item]);
   };
 
+  const handleAward = (id) => {
+    console.log(id);
+  };
+
+  const handleDelete = (id) => {
+    console.log(id);
+  };
+
   console.log(list);
 
   return (
@@ -20,7 +28,11 @@ export const App = () => {
       <main className={classes["App__main"]}>
         <Container>
           <Form onAddToList={handleAddToList}></Form>
-          <List list={list} />
+          <List
+            list={list}
+            handleAward={handleAward}
+            handleDelete={handleDelete}
+          />
         </Container>
       </main>
       <footer className={classes["App__footer"]}>
