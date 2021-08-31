@@ -1,2 +1,25 @@
 .form {
+  display: flex;
+  height: 40px;
+  width: 300px;
+  margin: 10px;
+}
+
+.form__input,
+.form__button {
+  font-size: 18px;
+  text-align: center;
+}
+
+.form__input {
+  width: 200px;
+}
+
+.form__input:focus {
+  outline: 2px solid yellow;
+}
+
+.form__button {
+  width: 100px;
+  text-transform: uppercase;
 }
