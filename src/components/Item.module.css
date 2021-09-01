@@ -7,11 +7,13 @@
   padding: 5px 10px;
   border: 1px solid white;
 }
+
 .item:hover {
   background-color: gray;
   border-color: gray;
   transition: 0.2s;
 }
+
 .item__name {
   flex-grow: 1;
   text-align: start;
@@ -20,11 +22,13 @@
 .item__action {
   width: 30%;
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: flex-end;
 }
 
 .item__award,
+.item__demote,
 .item__delete {
+  position: relative;
   width: 40px;
   height: 40px;
   line-height: 38px;
@@ -34,15 +38,71 @@
   transition: 0.2s;
 }
 
+.item__delete {
+  position: relative;
+}
+
 .item__award:hover,
+.item__demote:hover,
 .item__delete:hover {
   cursor: pointer;
+}
+
+.item__delete::before,
+.item__delete::after {
+  position: absolute;
+  top: 17px;
+  left: 5px;
+  content: "";
+  width: 75%;
+  height: 3px;
+  background-color: white;
+}
+
+.item__delete::before {
+  transform: rotate(45deg);
+}
+
+.item__delete::after {
+  transform: rotate(-45deg);
 }
 
 .item__delete:hover {
   background-color: red;
 }
 
+.item__award,
+.item__demote {
+  font-size: 30px;
+}
+
+.item__award {
+  color: yellow;
+}
+
 .item__award:hover {
   background-color: green;
+}
+
+.item--best {
+  background-color: gold;
+  color: #282c34;
+}
+
+.item--best .item__delete {
+  border-color: #282c34;
+}
+
+.item--best .item__delete::before,
+.item--best .item__delete::after {
+  background-color: #282c34;
+}
+
+.item__demote {
+  border: 2px solid #282c34;
+  border-radius: 50%;
+}
+
+.item__demote:hover {
+  background-color: yellow;
 }

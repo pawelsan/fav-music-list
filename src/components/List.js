@@ -1,7 +1,13 @@
 import { Item } from "./Item";
 import classes from "./List.module.css";
 
-export const List = ({ list, handleAward, handleDelete }) => {
+export const List = ({
+  list,
+  best,
+  handleAward,
+  handleDemote,
+  handleDelete,
+}) => {
   return (
     <ul className={classes["list"]}>
       {list.length ? (
@@ -9,8 +15,10 @@ export const List = ({ list, handleAward, handleDelete }) => {
           <Item
             key={item.id}
             id={item.id}
+            best={item.id === best}
             item={item.name}
             onAward={handleAward}
+            onDemote={handleDemote}
             onDelete={handleDelete}
           />
         ))

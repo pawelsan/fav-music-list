@@ -7,6 +7,7 @@ import classes from "./App.module.css";
 
 export const App = () => {
   const [list, setList] = useState([]);
+  const [best, setBest] = useState(null);
 
   const handleAddToList = (item) => {
     console.log(item);
@@ -15,10 +16,16 @@ export const App = () => {
 
   const handleAward = (id) => {
     console.log(id);
+    setBest(id);
+  };
+
+  const handleDemote = () => {
+    setBest(null);
   };
 
   const handleDelete = (id) => {
     console.log(id);
+    setList((prevList) => [...prevList.filter((item) => item.id !== id)]);
   };
 
   console.log(list);
@@ -31,7 +38,9 @@ export const App = () => {
           <Form onAddToList={handleAddToList}></Form>
           <List
             list={list}
+            best={best}
             handleAward={handleAward}
+            handleDemote={handleDemote}
             handleDelete={handleDelete}
           />
         </Container>
