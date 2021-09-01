@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container } from "./components/Container";
 import { Form } from "./components/Form";
 import { List } from "./components/List";
+import { v1 as uuidv1 } from "uuid";
 import classes from "./App.module.css";
 
 export const App = () => {
@@ -9,7 +10,7 @@ export const App = () => {
 
   const handleAddToList = (item) => {
     console.log(item);
-    setList((prevList) => [...prevList, item]);
+    setList((prevList) => [...prevList, { name: item, id: uuidv1() }]);
   };
 
   const handleAward = (id) => {

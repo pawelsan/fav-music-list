@@ -5,11 +5,11 @@ export const List = ({ list, handleAward, handleDelete }) => {
   return (
     <ul className={classes["list"]}>
       {list.length ? (
-        list.map((item, index) => (
+        list.map((item) => (
           <Item
-            key={index}
-            id={item}
-            item={item}
+            key={item.id}
+            id={item.id}
+            item={item.name}
             onAward={handleAward}
             onDelete={handleDelete}
           />
