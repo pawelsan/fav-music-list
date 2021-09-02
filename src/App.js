@@ -32,7 +32,9 @@ export const App = () => {
 
   return (
     <div className={classes["App"]}>
-      <header className={classes["App__header"]}>FavMusicList</header>
+      <header className={classes["App__header"]}>
+        <h1>FavMusicList</h1>
+      </header>
       <main className={classes["App__main"]}>
         <Container>
           <Form onAddToList={handleAddToList}></Form>
