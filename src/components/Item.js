@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Tooltip } from "./Tooltip";
 import { useTranslation } from "react-i18next";
 import classes from "./Item.module.css";

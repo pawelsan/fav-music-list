@@ -1,4 +1,4 @@
-import { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
 import { Footer } from "./components/Footer";
@@ -56,21 +56,19 @@ export const App = () => {
   };
 
   return (
-    <Suspense fallback="Loading...">
-      <div className={classes["App"]}>
-        <Header />
-        <Main>
-          <Form onAddToList={handleAddToList}></Form>
-          <List
-            list={list}
-            best={best}
-            handleAward={handleAward}
-            handleDemote={handleDemote}
-            handleDelete={handleDelete}
-          />
-        </Main>
-        <Footer />
-      </div>
-    </Suspense>
+    <div className={classes["App"]}>
+      <Header />
+      <Main>
+        <Form onAddToList={handleAddToList}></Form>
+        <List
+          list={list}
+          best={best}
+          handleAward={handleAward}
+          handleDemote={handleDemote}
+          handleDelete={handleDelete}
+        />
+      </Main>
+      <Footer />
+    </div>
   );
 };

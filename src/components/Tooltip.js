@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./Tooltip.module.css";
 
 export const Tooltip = ({ show, text }) => {
