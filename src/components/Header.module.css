@@ -5,6 +5,11 @@
   padding: 20px;
 }
 
+.header > h1 {
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+
 .header > select {
   position: absolute;
   top: 20px;
