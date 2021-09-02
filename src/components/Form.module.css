@@ -1,5 +1,10 @@
 .form {
   display: flex;
+  flex-direction: column;
+}
+
+.form__action {
+  display: flex;
   height: 40px;
   width: 300px;
   margin: 10px;
@@ -26,6 +31,11 @@
 
 .form__button:hover {
   background-color: gold;
+}
+
+.form__error {
+  font-size: 18px;
+  color: red;
 }
 
 @media screen and (max-width: 767px) {

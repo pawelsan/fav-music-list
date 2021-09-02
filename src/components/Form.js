@@ -1,19 +1,31 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import classes from "./Form.module.css";
 
 export const Form = ({ onAddToList }) => {
   const inputRef = useRef();
+  const [emptyInputError, setEmptyInputError] = useState(false);
 
   const handleSubmit = (event) => {
+    const { value } = inputRef.current;
     event.preventDefault();
-    onAddToList(inputRef.current.value.trim());
-    inputRef.current.value = "";
+    if (value) {
+      setEmptyInputError(false);
+      onAddToList(value.trim());
+      inputRef.current.value = "";
+    } else {
+      setEmptyInputError(true);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className={classes["form"]}>
-      <input type="text" ref={inputRef} className={classes["form__input"]} />
-      <button className={classes["form__button"]}>Dodaj</button>
-    </form>
+    <div className={classes["form"]}>
+      <form onSubmit={handleSubmit} className={classes["form__action"]}>
+        <input type="text" ref={inputRef} className={classes["form__input"]} />
+        <button className={classes["form__button"]}>Dodaj</button>
+      </form>
+      {emptyInputError && (
+        <p className={classes["form__error"]}>Proszę wpisać tytuł</p>
+      )}
+    </div>
   );
 };
