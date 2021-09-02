@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Tooltip } from "./Tooltip";
+import { useTranslation } from "react-i18next";
 import classes from "./Item.module.css";
 
 export const Item = ({ item, id, best, onAward, onDemote, onDelete }) => {
+  const { t } = useTranslation();
   const [show, setShow] = useState(false);
   return (
     <li
@@ -21,9 +23,7 @@ export const Item = ({ item, id, best, onAward, onDemote, onDelete }) => {
           {best ? <>&#8600;</> : <>&#8599;</>}
           <Tooltip
             show={show}
-            text={
-              best ? "Usuń z best of the best" : "Dodaj jako best of the best"
-            }
+            text={best ? t("demoteButton") : t("awardButton")}
           />
         </span>
         <span
