@@ -1,5 +1,5 @@
 import { useState, useEffect, Suspense } from "react";
-import { Main } from "./components/Container";
+import { Main } from "./components/Main";
 import { Form } from "./components/Form";
 import { List } from "./components/List";
 import { v1 as uuidv1 } from "uuid";
