@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container } from "./components/Container";
 import { Form } from "./components/Form";
 import { List } from "./components/List";
@@ -8,6 +8,16 @@ import classes from "./App.module.css";
 export const App = () => {
   const [list, setList] = useState([]);
   const [best, setBest] = useState(null);
+
+  useEffect(() => {
+    const storedList = JSON.parse(localStorage.getItem("list"));
+    setList(storedList);
+  }, []);
+
+  useEffect(() => {
+    localStorage["list"] = JSON.stringify(list);
+    console.log(localStorage.list);
+  }, [list]);
 
   const handleAddToList = (item) => {
     console.log(item);
