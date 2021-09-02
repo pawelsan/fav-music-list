@@ -11,5 +11,6 @@
   .container {
     flex-wrap: nowrap;
     flex-direction: column;
+    margin: 20px auto;
   }
 }
