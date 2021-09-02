@@ -15,14 +15,16 @@
 }
 
 .item__name {
-  flex-grow: 1;
   text-align: start;
+  overflow: hidden;
 }
 
 .item__action {
   width: 30%;
+  min-width: 100px;
   display: flex;
   justify-content: flex-end;
+  flex-grow: 1;
 }
 
 .item__award,

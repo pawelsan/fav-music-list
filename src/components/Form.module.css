@@ -16,10 +16,20 @@
 }
 
 .form__input:focus {
-  outline: 2px solid yellow;
+  outline: 2px solid gold;
 }
 
 .form__button {
   width: 100px;
   text-transform: uppercase;
+}
+
+.form__button:hover {
+  background-color: gold;
+}
+
+@media screen and (max-width: 767px) {
+  .form {
+    margin: 10px auto;
+  }
 }
