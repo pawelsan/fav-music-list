@@ -46,7 +46,7 @@ export const App = () => {
         </Container>
       </main>
       <footer className={classes["App__footer"]}>
-        &#169;Paweł Hińcza, 2021
+        &#169;Paweł Hińcza, {new Date().getFullYear()}
       </footer>
     </div>
   );
