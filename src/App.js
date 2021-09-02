@@ -11,13 +11,20 @@ export const App = () => {
 
   useEffect(() => {
     const storedList = JSON.parse(localStorage.getItem("list"));
+    const storedBest = localStorage.getItem("best");
     setList(storedList);
+    setBest(storedBest);
   }, []);
 
   useEffect(() => {
     localStorage["list"] = JSON.stringify(list);
     console.log(localStorage.list);
   }, [list]);
+
+  useEffect(() => {
+    localStorage["best"] = best;
+    console.log(localStorage.best);
+  }, [best]);
 
   const handleAddToList = (item) => {
     console.log(item);
