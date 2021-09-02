@@ -1,6 +1,7 @@
 import { useState, useEffect, Suspense } from "react";
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
+import { Footer } from "./components/Footer";
 import { Form } from "./components/Form";
 import { List } from "./components/List";
 import { v1 as uuidv1 } from "uuid";
@@ -75,9 +76,7 @@ export const App = () => {
             handleDelete={handleDelete}
           />
         </Main>
-        <footer className={classes["App__footer"]}>
-          &#169;Paweł Hińcza, {new Date().getFullYear()}
-        </footer>
+        <Footer />
       </div>
     </Suspense>
   );
