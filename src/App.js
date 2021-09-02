@@ -1,5 +1,5 @@
 import { useState, useEffect, Suspense } from "react";
-import { Container } from "./components/Container";
+import { Main } from "./components/Container";
 import { Form } from "./components/Form";
 import { List } from "./components/List";
 import { v1 as uuidv1 } from "uuid";
@@ -76,18 +76,16 @@ export const App = () => {
             <option value="en">English</option>
           </select>
         </header>
-        <main className={classes["App__main"]}>
-          <Container>
-            <Form onAddToList={handleAddToList}></Form>
-            <List
-              list={list}
-              best={best}
-              handleAward={handleAward}
-              handleDemote={handleDemote}
-              handleDelete={handleDelete}
-            />
-          </Container>
-        </main>
+        <Main>
+          <Form onAddToList={handleAddToList}></Form>
+          <List
+            list={list}
+            best={best}
+            handleAward={handleAward}
+            handleDemote={handleDemote}
+            handleDelete={handleDelete}
+          />
+        </Main>
         <footer className={classes["App__footer"]}>
           &#169;Paweł Hińcza, {new Date().getFullYear()}
         </footer>

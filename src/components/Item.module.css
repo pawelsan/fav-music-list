@@ -17,6 +17,7 @@
 .item__name {
   text-align: start;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .item__action {

@@ -1,14 +1,15 @@
-.container {
+.main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: calc(100% - 20px);
   max-width: 1024px;
   margin: 100px auto;
 }
 
 @media screen and (max-width: 767px) {
-  .container {
+  .main {
     flex-wrap: nowrap;
     flex-direction: column;
     margin: 20px auto;

@@ -6,7 +6,6 @@
 .form__action {
   display: flex;
   height: 40px;
-  width: 300px;
   margin: 10px;
 }
 
@@ -17,7 +16,7 @@
 }
 
 .form__input {
-  width: 200px;
+  width: 70%;
 }
 
 .form__input:focus {
@@ -25,12 +24,16 @@
 }
 
 .form__button {
-  width: 100px;
+  width: 30%;
   text-transform: uppercase;
+  border: 1px solid white;
+  color: white;
+  background-color: #282c34;
 }
 
 .form__button:hover {
   background-color: gold;
+  color: #282c34;
 }
 
 .form__error {
@@ -40,6 +43,7 @@
 
 @media screen and (max-width: 767px) {
   .form {
-    margin: 10px auto;
+    width: calc(100% - 20px);
+    margin: 20px auto;
   }
 }

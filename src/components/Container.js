@@ -1,5 +1,5 @@
 import classes from "./Container.module.css";
 
-export const Container = ({ children }) => (
-  <div className={classes["container"]}>{children}</div>
+export const Main = ({ children }) => (
+  <main className={classes["main"]}>{children}</main>
 );
