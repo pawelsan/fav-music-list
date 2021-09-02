@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+}
+
+.header > select {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-transform: uppercase;
+  padding: 2px;
+  border: 1px solid white;
+  color: white;
+  background-color: #282c34;
+}

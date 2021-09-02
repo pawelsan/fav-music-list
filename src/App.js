@@ -1,10 +1,11 @@
 import { useState, useEffect, Suspense } from "react";
+import { Header } from "./components/Header";
 import { Main } from "./components/Main";
 import { Form } from "./components/Form";
 import { List } from "./components/List";
 import { v1 as uuidv1 } from "uuid";
 import i18n from "i18next";
-import { initReactI18next, useTranslation } from "react-i18next";
+import { initReactI18next } from "react-i18next";
 import { translationsPl, translationsEn } from "./translations/translations";
 import classes from "./App.module.css";
 
@@ -19,8 +20,6 @@ i18n.use(initReactI18next).init({
 });
 
 export const App = () => {
-  const { t } = useTranslation();
-
   const [list, setList] = useState([]);
   const [best, setBest] = useState(null);
 
@@ -60,22 +59,12 @@ export const App = () => {
     setList((prevList) => [...prevList.filter((item) => item.id !== id)]);
   };
 
-  const handleChange = (e) => {
-    i18n.changeLanguage(e.target.value);
-  };
-
   console.log(list);
 
   return (
     <Suspense fallback="Loading...">
       <div className={classes["App"]}>
-        <header className={classes["App__header"]}>
-          <h1>{t("title")}</h1>
-          <select name="languages" onChange={handleChange}>
-            <option value="pl">Polski</option>
-            <option value="en">English</option>
-          </select>
-        </header>
+        <Header />
         <Main>
           <Form onAddToList={handleAddToList}></Form>
           <List
