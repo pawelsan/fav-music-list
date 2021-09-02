@@ -3,10 +3,11 @@
   top: calc(100% + 5px);
   right: -40%;
   background: black;
-  width: 200px;
   color: #fff;
+  width: 200px;
   padding: 5px;
   border-radius: 5px;
+  font-size: 14px;
   display: none;
   z-index: 1;
 }
