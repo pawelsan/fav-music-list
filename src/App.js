@@ -33,21 +33,17 @@ export const App = () => {
 
   useEffect(() => {
     localStorage["list"] = JSON.stringify(list);
-    console.log(localStorage.list);
   }, [list]);
 
   useEffect(() => {
     localStorage["best"] = best;
-    console.log(localStorage.best);
   }, [best]);
 
   const handleAddToList = (item) => {
-    console.log(item);
     setList((prevList) => [...prevList, { name: item, id: uuidv1() }]);
   };
 
   const handleAward = (id) => {
-    console.log(id);
     setBest(id);
   };
 
@@ -56,11 +52,8 @@ export const App = () => {
   };
 
   const handleDelete = (id) => {
-    console.log(id);
     setList((prevList) => [...prevList.filter((item) => item.id !== id)]);
   };
-
-  console.log(list);
 
   return (
     <Suspense fallback="Loading...">
